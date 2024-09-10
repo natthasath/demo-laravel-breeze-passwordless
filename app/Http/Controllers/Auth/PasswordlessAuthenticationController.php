@@ -27,7 +27,7 @@ class PasswordlessAuthenticationController extends Controller
 
         Mail::to($request->email)->send(new PasswordlessMail($url));
 
-        return back()->with('success', 'A link has been sent to your email address. Please click the link to login');
+        return back()->with('status', 'A link has been sent to your email address. Please click the link to login');
     }
 
     public function authenticateUser(Request $request): RedirectResponse
